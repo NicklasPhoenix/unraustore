@@ -16,7 +16,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1em;
-    background-color: #333; /* Adjusted to match design */
+    background-color: transparent; /* Adjusted for transparent header */
 }
 
 nav a {
@@ -41,7 +41,7 @@ nav a {
     display: inline-block;
     width: 24px;
     height: 24px;
-    background-color: #ddd; /* Icon placeholder */
+    background-color: transparent; /* Icons might be replaced with actual images */
     text-align: center;
     line-height: 24px;
     margin-right: 5px;
@@ -49,25 +49,41 @@ nav a {
 
 /* Hero Section */
 .hero {
-    background-image: url('1.png'); 
+    background-image: url('1.png'); /* Updated background image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: white;
     text-align: center;
     padding: 100px 20px;
+    position: relative; /* For overlay */
+}
+
+.hero:before { /* Overlay */
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+    z-index: 1;
 }
 
 h1 {
-    font-family: 'Times New Roman', serif; /* Changed to serif font */
+    position: relative;
+    z-index: 2;
+    font-family: 'Arial', sans-serif; /* Adjusted font-family to match the design */
     font-size: 3em; /* Adjusted font size */
     margin-bottom: 0.5em;
 }
 
 .btn {
+    position: relative;
+    z-index: 2;
     display: inline-block;
     padding: 10px 20px;
-    background-color: #222; /* Adjusted to match design */
+    background-color: #444; /* Adjusted to match design */
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
@@ -75,5 +91,5 @@ h1 {
 }
 
 .btn:hover {
-    background-color: #444; /* Darker shade on hover */
+    background-color: #666; /* Darker shade on hover */
 }
